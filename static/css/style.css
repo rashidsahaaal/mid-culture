@@ -1,0 +1,244 @@
+/* RESET */
+/* FIX MEN / WOMEN BUTTON SPACING */
+.gender-buttons {
+    margin-bottom: 30px;
+}
+
+.gender-buttons .gender-btn {
+    display: inline-block;
+    margin-right: 25px;
+    padding: 8px 20px;
+    border-radius: 25px;
+    background: transparent;
+    color: #9b59ff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.gender-buttons .gender-btn:last-child {
+    margin-right: 0;
+}
+
+.gender-buttons .gender-btn:hover {
+    color: #ffffff;
+}
+
+.gender-buttons .gender-btn.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 50px;
+    background: #000;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.login {
+    border: 1px solid #444;
+}
+
+.signup {
+    background: #fff;
+    color: #000;
+}
+
+.logout {
+    background: #ff3b3b;
+    color: #fff;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* MAIN CONTAINER */
+.container {
+    padding: 30px 50px;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* ========================= */
+/* MEN / WOMEN BUTTONS */
+/* ========================= */
+
+.gender-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;          /* ✅ DISTANCE BETWEEN BUTTONS */
+    margin-bottom: 35px;
+}
+
+.gender-btn {
+    padding: 9px 26px;
+    border-radius: 30px;
+    background: #111;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #1f1f1f;
+    transition: all 0.3s ease;
+}
+
+.gender-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.gender-btn.active {
+    background: #fff;
+    color: #000;
+}
+
+/* PRODUCT GRID */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+    background: #111;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #1f1f1f;
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* IMAGE */
+.product-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* PRODUCT INFO */
+.product-info {
+    padding: 14px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+/* PRICE */
+.price {
+    font-size: 13px;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+/* ADD TO CART BUTTON */
+.add-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #fff;
+    color: #000;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: #e5e5e5;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .product-img {
+        height: 170px;
+    }
+
+    .gender-buttons {
+        gap: 20px; /* smaller gap on mobile */
+    }
+}

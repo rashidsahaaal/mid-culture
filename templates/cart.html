@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load cart_tags %}
+{% block content %}
+
+<h2 class="cart-title">Your Cart</h2>
+
+<div class="cart-container">
+
+{% for p in products %}
+<div class="cart-item">
+
+    <img src="{{ p.image.url }}" class="cart-img" alt="{{ p.name }}">
+
+    <div class="cart-details">
+        <h3>{{ p.name }}</h3>
+        <p class="cart-price">₹{{ p.price }}</p>
+
+        <div class="qty">
+            <a href="{% url 'store:decrease' p.id %}" class="qty-btn">−</a>
+            <span class="qty-count">{{ cart|get_item:p.id }}</span>
+            <a href="{% url 'store:increase' p.id %}" class="qty-btn">+</a>
+        </div>
+
+        <a href="{% url 'store:remove' p.id %}" class="remove-btn">
+            Remove
+        </a>
+    </div>
+
+</div>
+{% empty %}
+<p class="empty-cart">Your cart is empty.</p>
+{% endfor %}
+
+</div>
+
+<div class="cart-summary">
+    <h3>Total</h3>
+    <p class="total-price">₹{{ total }}</p>
+    <a href="#" class="checkout-btn">Proceed to Checkout</a>
+</div>
+
+{% endblock %}

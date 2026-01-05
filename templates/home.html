@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h2 class="section-title">Products</h2>
+
+<!-- CATEGORY BUTTONS -->
+<div class="gender-buttons">
+    <a href="{% url 'store:home' %}"
+       class="gender-btn {% if not selected_category %}active{% endif %}">
+        All
+    </a>
+
+    {% for category in categories %}
+        <a href="?category={{ category.id }}"
+           class="gender-btn {% if selected_category == category.id %}active{% endif %}">
+            {{ category.name }}
+        </a>
+    {% endfor %}
+</div>
+
+<!-- PRODUCTS GRID -->
+<div class="products">
+    {% for product in products %}
+        <div class="product-card">
+
+            <div class="product-img">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
+
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <p class="price">₹{{ product.price }}</p>
+
+                <a class="add-btn" href="{% url 'store:add' product.id %}">
+                    Add to Cart
+                </a>
+            </div>
+
+        </div>
+    {% empty %}
+        <p class="empty-text">No products found.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
